@@ -5,7 +5,7 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="l7wsbRFqEFvn701YVKcY-1" parent="1" style="sketch=0;outlineConnect=0;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud;strokeColor=#d6b656;fillColor=#FFFFFF;verticalAlign=top;align=left;spacingLeft=30;dashed=0;" value="AWS Cloud" vertex="1">
-          <mxGeometry height="560" width="846.31" x="-206.31" y="140" as="geometry" />
+          <mxGeometry height="510" width="846.31" x="-206.31" y="140" as="geometry" />
         </mxCell>
         <mxCell id="l7wsbRFqEFvn701YVKcY-2" parent="1" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://icons.diagrams.net/icon-cache1/Dompicon_Glyph_File_Format_2-2630/file-csv-format-type-1406.svg" value="" vertex="1">
           <mxGeometry height="46" width="46" x="-313" y="184" as="geometry" />
