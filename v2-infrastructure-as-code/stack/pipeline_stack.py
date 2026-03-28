@@ -8,14 +8,14 @@ from aws_cdk import (
     aws_glue as glue,
     aws_iam as iam,
     aws_sns as sns,
-    aws_sns_subscriptions as subscriptions,
     aws_cloudwatch as cloudwatch,
     aws_cloudwatch_actions as cw_actions,
+    custom_resources as cr,
 )
 from constructs import Construct
 
 SUFFIX = "nak76700"
-ALERT_EMAIL = "nak76700.awsproject@outlook.com"
+ALERT_EMAIL = "thenewpretender@gmail.com"
 
 
 class DataPipelineStack(Stack):
@@ -74,7 +74,35 @@ class DataPipelineStack(Stack):
             topic_name=f"pipeline-alerts-{SUFFIX}",
             master_key=shared_key,
         )
-        alert_topic.add_subscription(subscriptions.EmailSubscription(ALERT_EMAIL))
+        # Email subscription via custom resource — created once, never recreated on redeploy
+        sns_subscription = cr.AwsCustomResource(
+            self, f"SNSSubscription{SUFFIX}",
+            on_create=cr.AwsSdkCall(
+                service="SNS",
+                action="subscribe",
+                parameters={
+                    "TopicArn": alert_topic.topic_arn,
+                    "Protocol": "email",
+                    "Endpoint": ALERT_EMAIL,
+                },
+                physical_resource_id=cr.PhysicalResourceId.of(f"sns-sub-{SUFFIX}"),
+                # Store the SubscriptionArn so on_delete can reference it
+                output_paths=["SubscriptionArn"],
+            ),
+            on_delete=cr.AwsSdkCall(
+                service="SNS",
+                action="unsubscribe",
+                parameters={
+                    "SubscriptionArn": cr.PhysicalResourceIdReference(),
+                },
+            ),
+            policy=cr.AwsCustomResourcePolicy.from_statements([
+                iam.PolicyStatement(
+                    actions=["sns:Subscribe", "sns:Unsubscribe"],
+                    resources=[alert_topic.topic_arn],
+                )
+            ]),
+        )
 
         # ── CloudWatch alarm: DLQ has messages → SNS ────────────────────────
         dlq_alarm = cloudwatch.Alarm(
@@ -182,7 +210,7 @@ class DataPipelineStack(Stack):
             database_name=f"pipeline_catalog_{SUFFIX}",
             targets=glue.CfnCrawler.TargetsProperty(
                 s3_targets=[glue.CfnCrawler.S3TargetProperty(
-                    path=f"s3://{processed_bucket.bucket_name}/"
+                    path=f"s3://{processed_bucket.bucket_name}/orders/"
                 )]
             ),
             schema_change_policy=glue.CfnCrawler.SchemaChangePolicyProperty(

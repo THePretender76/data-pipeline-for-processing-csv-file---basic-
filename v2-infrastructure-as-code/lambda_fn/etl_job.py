@@ -4,6 +4,7 @@ from awsglue.utils import getResolvedOptions
 from pyspark.context import SparkContext
 from awsglue.context import GlueContext
 from awsglue.job import Job
+from awsglue.dynamicframe import DynamicFrame
 from pyspark.sql import functions as F
 
 args = getResolvedOptions(sys.argv, ["JOB_NAME", "SOURCE_DATABASE", "DESTINATION_BUCKET"])
@@ -19,7 +20,7 @@ dest = f"s3://{args['DESTINATION_BUCKET']}/final_output"
 # ── 1. Read the table created by the Crawler in the Data Catalog ─────────────
 datasource = glueContext.create_dynamic_frame.from_catalog(
     database=args["SOURCE_DATABASE"],
-    table_name="orders",
+    table_name="processed_file_pipeline_nak76700",  # actual table name created by the crawler
 )
 df = datasource.toDF()
 
@@ -31,6 +32,7 @@ vip_customers = (
         F.count("order_id").alias("order_count"),
     )
     .orderBy(F.col("total_spent").desc())
+    .coalesce(1)
 )
 
 # ── 3. Regional market performance: total revenue and orders per country ──────
@@ -41,6 +43,7 @@ market_performance = (
         F.count("order_id").alias("order_count"),
     )
     .orderBy(F.col("total_revenue").desc())
+    .coalesce(1)
 )
 
 # ── 4. Write both outputs as CSV ─────────────────────────────────────────────
