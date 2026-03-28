@@ -2,3 +2,5 @@ cdk.out/
 __pycache__/
 *.pyc
 .env
+market_performance/
+vip_customers/
