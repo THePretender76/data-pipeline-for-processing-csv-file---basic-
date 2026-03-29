@@ -46,7 +46,19 @@ market_performance = (
     .coalesce(1)
 )
 
-# ── 4. Write outputs as Parquet partitioned by year/month/day ────────────────
+# ── 4. Product performance: total revenue and units sold per product ──────────
+product_performance = (
+    df.groupBy("product")
+    .agg(
+        F.round(F.sum("total_amount"), 2).alias("total_revenue"),
+        F.sum("quantity").alias("total_units_sold"),
+        F.count("order_id").alias("order_count"),
+    )
+    .orderBy(F.col("total_revenue").desc())
+    .coalesce(1)
+)
+
+# ── 5. Write outputs as Parquet partitioned by year/month/day ────────────────
 def write_parquet_partitioned(dataframe, path):
     glueContext.write_dynamic_frame.from_options(
         frame=DynamicFrame.fromDF(dataframe, glueContext, "output"),
@@ -68,7 +80,12 @@ write_parquet_partitioned(market_performance.withColumn("year",  F.lit("all"))
                                             .withColumn("day",   F.lit("all")),
                           f"{dest}/market_performance/")
 
-# ── 5. Write full orders dataset partitioned by order date ───────────────────
+write_parquet_partitioned(product_performance.withColumn("year",  F.lit("all"))
+                                              .withColumn("month", F.lit("all"))
+                                              .withColumn("day",   F.lit("all")),
+                          f"{dest}/product_performance/")
+
+# ── 6. Write full orders dataset partitioned by order date ───────────────────
 write_parquet_partitioned(df, f"{dest}/orders/")
 
 job.commit()
