@@ -43,6 +43,19 @@ class DataPipelineStack(Stack):
             enforce_ssl=True,
             event_bridge_enabled=True,  # required for EventBridge S3 rules
             removal_policy=RemovalPolicy.RETAIN,
+            versioned=True,
+            lifecycle_rules= [
+                s3.LifecycleRule(
+                    id="MoveToIAAfterOneYear",
+                    enabled=True,
+                    transitions=[
+                        s3.Transition(
+                            storage_class=s3.StorageClass.INFREQUENT_ACCESS,
+                            transition_after=Duration.days(365),
+                        )
+                    ]
+                )
+            ]
         )
 
         processed_bucket = s3.Bucket(
@@ -53,6 +66,19 @@ class DataPipelineStack(Stack):
             block_public_access=s3.BlockPublicAccess.BLOCK_ALL,
             enforce_ssl=True,
             removal_policy=RemovalPolicy.RETAIN,
+                        versioned=True,
+            lifecycle_rules= [
+                s3.LifecycleRule(
+                    id="MoveToIAAfterOneYear",
+                    enabled=True,
+                    transitions=[
+                        s3.Transition(
+                            storage_class=s3.StorageClass.INFREQUENT_ACCESS,
+                            transition_after=Duration.days(365),
+                        )
+                    ]
+                )
+            ]
         )
 
         final_bucket = s3.Bucket(
@@ -63,6 +89,19 @@ class DataPipelineStack(Stack):
             block_public_access=s3.BlockPublicAccess.BLOCK_ALL,
             enforce_ssl=True,
             removal_policy=RemovalPolicy.RETAIN,
+            versioned=True,
+            lifecycle_rules= [
+                s3.LifecycleRule(
+                    id="MoveToIAAfterOneYear",
+                    enabled=True,
+                    transitions=[
+                        s3.Transition(
+                            storage_class=s3.StorageClass.INFREQUENT_ACCESS,
+                            transition_after=Duration.days(365),
+                        )
+                    ]
+                )
+            ]
         )
 
         scripts_bucket = s3.Bucket(
