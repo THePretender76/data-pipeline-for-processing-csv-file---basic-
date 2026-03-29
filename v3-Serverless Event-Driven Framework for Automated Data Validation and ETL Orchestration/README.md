@@ -12,18 +12,11 @@
 
 ## Architecture
 
-```
-S3 (raw CSV upload)
-  └── EventBridge (Object Created rule, .csv filter)
-        └── Step Functions (orchestrator)
-              ├── Lambda          → validate + clean CSV → S3 (processed)
-              ├── Glue Crawler 1  → scan processed bucket → Glue Data Catalog
-              ├── Glue ETL Job    → transform + aggregate → S3 (final, Parquet, partitioned)
-              ├── Glue Crawler 2  → scan final bucket → Glue Data Catalog (Athena-ready)
-              └── CATCH (any step) → SNS email alert + SQS DLQ
-```
+<img width="1007" height="1096" alt="image" src="https://github.com/user-attachments/assets/60949992-a361-4f58-81a4-6d34ea79a9aa" />
 
----
+
+
+
 
 ## Tech Stack
 
