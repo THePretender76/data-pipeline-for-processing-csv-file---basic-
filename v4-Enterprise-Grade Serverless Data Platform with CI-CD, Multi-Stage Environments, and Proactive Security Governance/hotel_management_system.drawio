@@ -61,6 +61,12 @@
         <mxCell id="wa6_rt99cc6gW8XlwSJl-1" parent="X-I-CixbwlNjkiumorAQ-53" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Authentification" vertex="1">
           <mxGeometry height="30" width="60" x="80" y="55" as="geometry" />
         </mxCell>
+        <mxCell id="dxkV7yEtE291n9dSWjKb-1" parent="X-I-CixbwlNjkiumorAQ-53" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.users.administrator;" value="" vertex="1">
+          <mxGeometry height="56" width="58" x="274" y="429" as="geometry" />
+        </mxCell>
+        <mxCell id="dxkV7yEtE291n9dSWjKb-2" parent="X-I-CixbwlNjkiumorAQ-53" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontStyle=1;fontSize=14;" value="BI analystic" vertex="1">
+          <mxGeometry height="30" width="79" x="253" y="495" as="geometry" />
+        </mxCell>
         <mxCell id="zUC5pTu762WnJi7pnSmb-1" parent="1" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudfront;" value="" vertex="1">
           <mxGeometry height="69" width="69" x="135" y="366" as="geometry" />
         </mxCell>
