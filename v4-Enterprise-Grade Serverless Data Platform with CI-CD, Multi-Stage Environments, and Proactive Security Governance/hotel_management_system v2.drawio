@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="bSyaACrgjyCkZjAUvMdL">
-    <mxGraphModel dx="2363" dy="2478" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+    <mxGraphModel dx="1920" dy="2233" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -23,7 +23,7 @@
           <mxGeometry height="308" width="249" x="1270" y="222" as="geometry" />
         </mxCell>
         <mxCell id="X-I-CixbwlNjkiumorAQ-53" parent="1" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=0;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;strokeColor=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;dashed=0;" value="AWS Cloud" vertex="1">
-          <mxGeometry height="1350" width="2153.5" x="216.5" y="-50" as="geometry" />
+          <mxGeometry height="1310" width="2153.5" x="216.5" y="-50" as="geometry" />
         </mxCell>
         <mxCell id="zUC5pTu762WnJi7pnSmb-1" parent="1" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudfront;container=0;" value="" vertex="1">
           <mxGeometry height="69" width="69" x="346" y="604" as="geometry" />
@@ -516,15 +516,6 @@
             <mxPoint x="2560" y="460" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="SCchAOsyZcud_EP7V0Vg-82" edge="1" parent="1" source="SCchAOsyZcud_EP7V0Vg-91" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;edgeStyle=orthogonalEdgeStyle;" target="zUC5pTu762WnJi7pnSmb-1" value="">
-          <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <Array as="points">
-              <mxPoint x="140" y="638" />
-            </Array>
-            <mxPoint x="40" y="600" as="sourcePoint" />
-            <mxPoint x="90" y="550" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
         <mxCell id="SCchAOsyZcud_EP7V0Vg-84" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;container=0;" value="JWT token" vertex="1">
           <mxGeometry height="30" width="60" x="140" y="643" as="geometry" />
         </mxCell>
@@ -540,9 +531,11 @@
         <mxCell id="SCchAOsyZcud_EP7V0Vg-90" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;rotation=0;gradientColor=#C35500;strokeColor=none;gradientDirection=east;fillColor=#FFB300;rounded=0;pointerEvents=0;fontFamily=Helvetica;fontSize=16;fontColor=#FFFFFF;spacingTop=4;spacingBottom=4;spacingLeft=4;spacingRight=4;points=[];fontStyle=1" value="1" vertex="1">
           <mxGeometry height="30" width="30" x="399" y="398" as="geometry" />
         </mxCell>
-        <mxCell id="SCchAOsyZcud_EP7V0Vg-93" edge="1" parent="1" source="X-I-CixbwlNjkiumorAQ-59" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;edgeStyle=orthogonalEdgeStyle;" target="SCchAOsyZcud_EP7V0Vg-91" value="">
+        <mxCell id="SCchAOsyZcud_EP7V0Vg-93" edge="1" parent="1" source="X-I-CixbwlNjkiumorAQ-59" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;edgeStyle=orthogonalEdgeStyle;" target="zUC5pTu762WnJi7pnSmb-1" value="">
           <mxGeometry height="50" relative="1" width="50" as="geometry">
-            <Array as="points" />
+            <Array as="points">
+              <mxPoint x="140" y="638" />
+            </Array>
             <mxPoint x="140" y="464" as="sourcePoint" />
             <mxPoint x="346" y="639" as="targetPoint" />
           </mxGeometry>
@@ -570,6 +563,12 @@
         </mxCell>
         <mxCell id="SCchAOsyZcud_EP7V0Vg-102" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;rotation=0;gradientColor=#C35500;strokeColor=none;gradientDirection=east;fillColor=#FFB300;rounded=0;pointerEvents=0;fontFamily=Helvetica;fontSize=16;fontColor=#FFFFFF;spacingTop=4;spacingBottom=4;spacingLeft=4;spacingRight=4;points=[];fontStyle=1" value="9" vertex="1">
           <mxGeometry height="30" width="30" x="2076" y="766" as="geometry" />
+        </mxCell>
+        <mxCell id="SCchAOsyZcud_EP7V0Vg-103" parent="1" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;rotation=0;gradientColor=#C35500;strokeColor=none;gradientDirection=east;fillColor=#FFB300;rounded=0;pointerEvents=0;fontFamily=Helvetica;fontSize=16;fontColor=#FFFFFF;spacingTop=4;spacingBottom=4;spacingLeft=4;spacingRight=4;points=[];fontStyle=1" value="1" vertex="1">
+          <mxGeometry height="30" width="30" x="221" y="1330" as="geometry" />
+        </mxCell>
+        <mxCell id="SCchAOsyZcud_EP7V0Vg-104" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="The user opens the &lt;b data-path-to-node=&quot;4&quot; data-index-in-node=&quot;19&quot;&gt;Browser&lt;/b&gt; and attempts to log in. The browser interacts directly with &lt;b data-path-to-node=&quot;4&quot; data-index-in-node=&quot;87&quot;&gt;Amazon Cognito&lt;/b&gt;. Cognito authenticates the user and issues a secure JSON Web Token (JWT) back to the browser." vertex="1">
+          <mxGeometry height="30" width="1180" x="220" y="1330" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
