@@ -267,7 +267,7 @@
           <mxGeometry height="30" width="79" x="1802" y="591" as="geometry" />
         </mxCell>
         <mxCell id="ud1iLmh8GVkp0dqP_e57-41" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontStyle=1;fontSize=12;container=0;" value="Cognito" vertex="1">
-          <mxGeometry height="30" width="79" x="697" y="382" as="geometry" />
+          <mxGeometry height="30" width="79" x="689.5" y="368" as="geometry" />
         </mxCell>
         <mxCell id="ud1iLmh8GVkp0dqP_e57-45" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=10;fontStyle=2;container=0;" value="Publish Reservation Created Event" vertex="1">
           <mxGeometry height="30" width="90" x="1347" y="489.15999999999997" as="geometry" />
@@ -527,6 +527,9 @@
         </mxCell>
         <mxCell id="SCchAOsyZcud_EP7V0Vg-84" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;container=0;" value="JWT token" vertex="1">
           <mxGeometry height="30" width="60" x="140" y="643" as="geometry" />
+        </mxCell>
+        <mxCell id="SCchAOsyZcud_EP7V0Vg-86" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;container=0;" value="path based routing" vertex="1">
+          <mxGeometry height="30" width="108.5" x="1131.5" y="643" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
