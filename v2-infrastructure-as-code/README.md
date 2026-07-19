@@ -13,7 +13,8 @@
 ## Architecture
 
 ```
-<img width="932" height="888" alt="image" src="https://github.com/user-attachments/assets/f6a723ac-cbe2-4f05-8ff5-2a828c67e14f" />
+<img width="932" height="888" alt="Evolution 2 - Add KMS, DLQ SQS, SNS, CDK automation drawio" src="https://github.com/user-attachments/assets/98716bb5-83cd-4384-b76e-2aaf082c5699" />
+
 
 
 ---
