@@ -13,15 +13,8 @@
 ## Architecture
 
 ```
-S3 (raw CSV upload)
-  └── S3 Event Notification
-        └── Lambda (validate + clean CSV) ──FAIL──→ SQS DLQ → CloudWatch Alarm → SNS email
-              └── S3 (processed bucket, orders/)
-                    └── Glue Crawler → Glue Data Catalog
-                          └── Glue ETL Job (PySpark)
-                                └── S3 (final bucket)
-                                      └── Amazon QuickSight
-```
+<img width="932" height="888" alt="image" src="https://github.com/user-attachments/assets/981e8278-5d9b-4483-8c48-8c188cc48ceb" />
+
 
 ---
 
