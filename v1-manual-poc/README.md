@@ -14,18 +14,6 @@
 
 <img width="778" height="715" alt="image" src="https://github.com/user-attachments/assets/bb90adf1-c3bb-461c-a8e0-636469314beb" />
 
-```
-S3 (raw CSV upload)
-  └── S3 Event Notification
-        └── Lambda (clean + reformat CSV)
-              └── S3 (processed bucket)
-                    └── Glue Crawler → Glue Data Catalog
-                          └── Glue ETL Job (PySpark)
-                                └── S3 (final bucket)
-                                      └── Amazon QuickSight
-```
-
----
 
 ## Tech Stack
 
